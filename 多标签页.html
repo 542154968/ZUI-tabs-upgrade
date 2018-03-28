@@ -684,7 +684,13 @@
                 },
                 // 监听 关闭标签页 获取tab-nav-item 的剩余数量
                 tabsClose: function(){
-                    $('#tabs').on('onClose', function(tab) {
+                    var _this = this;
+                    $('#tabs').on('onClose', function(event) {
+                        var $item = $('.tab-nav-item').last();
+                        // 这个150 可会变不太清楚 就是最后一个的左偏移距离
+                        if ( Math.abs($item.offset().left) <= 150 ) {
+                            $('img.back').trigger('click');
+                        }
                         $(window).trigger('resize')
                     });
                 },
