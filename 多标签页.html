@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>标签页</title>
+    <link rel="stylesheet" href="css/zui.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="css/work.css" />
+    <link rel="stylesheet" href="lib/tabs/zui.tabs.min.css">
+    <style>
+        .tabs .tabs-navbar {
+            background: #e3e3e3;
+            height: 30px;
+            padding: 0 100px;
+            position: relative;
+        }
+
+        .tabs .tabs-navbar-right,
+        .tabs .tabs-navbar-left {
+            position: absolute;
+            top: 0;
+            height: 30px;
+            line-height: 30px;
+            width: 100px;
+        }
+
+        .tabs .tabs-navbar-right img,
+        .tabs .tabs-navbar-left img {
+            cursor: pointer;
+        }
+
+        .tabs .tabs-navbar .tabs-navbar-left {
+            left: 0;
+            padding-left: 14px;
+        }
+
+        .tabs .tabs-navbar .tabs-navbar-left img:first-child {
+            margin-right: 18px;
+        }
+
+        .tabs .tabs-navbar .tabs-navbar-right {
+            right: 0px;
+            padding-right: 0px;
+        }
+
+        .tabs .tabs-navbar .tabs-navbar-right img.forward {
+            transform: rotate(180deg);
+            float: right;
+            margin-top: 8px;
+        }
+
+        .tabs .tabs-navbar .tabs-navbar-right .dropdown {
+            float: right;
+        }
+
+        .tabs .tabs-navbar-right .dropdown .btn {
+            border: none;
+            padding: 0;
+            margin-left: 20px;
+            height: 30px;
+            line-height: 30px;
+            width: 35px;
+            background: #e3e3e3;
+            border-radius: 0;
+            vertical-align: top;
+            font-weight: bold;
+        }
+
+        .tabs .tabs-navbar-right .dropdown-menu {
+            right: 0;
+            left: auto;
+            margin: 0;
+            min-width: 122px;
+            border-radius: 0;
+            border-color: #e6e6e6;
+            border-top: none;
+            border-right: none;
+            box-shadow: unset;
+        }
+
+        .tabs .tabs-navbar-right .dropdown-menu>li>a {
+            padding: 3px 15px;
+        }
+
+        .tabs .tabs-navbar-right .dropdown-menu>li>a:focus,
+        .dropdown-menu>li>a:hover {
+            background: inherit;
+            color: #eb6120;
+        }
+
+        .tabs .tabs-navbar-right .dropdown:hover .btn {
+            box-shadow: 0 0 0 transparent;
+            background: #fff;
+            color: #eb6120;
+        }
+
+        .tabs .tabs-navbar .nav-tabs>li>a {
+            margin-right: 0px;
+            border-radius: 0;
+            border-right: none
+        }
+
+        .tabs .tabs-navbar .nav-tabs>li:last-child a {
+            border-right: none;
+        }
+
+        .tabs .tabs-navbar .nav-tabs-contain {
+            height: 30px;
+            white-space: nowrap;
+            overflow: hidden;
+        }
+
+        .tabs .nav-tabs {
+            transform: translateX(0);
+            transition: transform 0.5s;
+        }
+
+        .tabs .tabs-navbar .nav-tabs>li {
+            display: inline-block;
+            float: none;
+        }
+
+        .tabs .tabs-navbar .tab-nav-item {
+            padding-right: 0px;
+            width: 120px;
+            min-width: 120px;
+            max-width: 120px !important;
+        }
+
+        .tabs .tabs-container {
+            top: 30px;
+            padding: 14px
+        }
+
+        .tabs .tabs-container>.tab-pane {
+            padding: 14px
+        }
+
+        .tabs .tab-nav-link>.close {
+            line-height: 19px;
+            text-indent: -2px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="xa-navbar">
+        <a class="brand" href=""></a>
+        <div class="content">
+            <div class="pull-left">
+                <span class="text nav-more">
+                    站点
+                    <span class="small">［合肥］</span>
+                    <i class="icon icon-angle-down"></i>
+                    <div class="dropdown-menu menu-sm">
+                        <a href="" class="only-a">合肥</a>
+                        <a href="" class="only-a">芜湖</a>
+                    </div>
+                </span>
+                <a href="" class="text">
+                    <i class=""></i> 链接</a>
+                <span class="text nav-more">
+                    更多应用
+                    <i class="icon icon-angle-down"></i>
+                    <div class="dropdown-menu">
+                        <div>
+                            <div class="list">
+                                <dl>
+                                    <dt>协同</dt>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-rizhi"></i>目标管理</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-baogao"></i>目标管理</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-gonggao"></i>目标管理</a>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>资讯</dt>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-rizhi"></i>目标管理</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-baogao"></i>目标管理</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-rizhi"></i>目标管理</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-baogao"></i>目标管理</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-gonggao"></i>目标管理</a>
+                                    </dd>
+                                </dl>
+                            </div>
+                            <div class="list">
+                                <dl>
+                                    <dt>摇号</dt>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-rizhi"></i>目标管理</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-baogao"></i>目标管理</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-gonggao"></i>目标管理</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-kaoqin"></i>目标管理</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-oa_"></i>目标管理</a>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>新房</dt>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-rizhi"></i>目标管理</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-baogao"></i>目标管理</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-oa_"></i>目标管理</a>
+                                    </dd>
+                                </dl>
+
+                            </div>
+                            <div class="list">
+                                <dl>
+                                    <dt>协同</dt>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-rizhi"></i>目标管理</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-baogao"></i>目标管理</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-gonggao"></i>目标管理</a>
+                                    </dd>
+                                </dl>
+                                <dl>
+                                    <dt>资讯</dt>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-rizhi"></i>目标管理</a>
+                                    </dd>
+                                    <dd>
+                                        <a href="">
+                                            <i class="reportFont-baogao"></i>目标管理</a>
+                                    </dd>
+                                </dl>
+                            </div>
+                        </div>
+                        <div class="setup">
+                            <i class="icon icon-spin icon-cog"></i> 设置
+                        </div>
+                    </div>
+                </span>
+            </div>
+            <div class="pull-right">
+                <span class="text nav-more">
+                    <i class="icon-plus-sign"></i>
+                    <div class="dropdown-menu menu-width-300">
+                        <a href="" class="only-a">添加XXX</a>
+                    </div>
+                </span>
+                <div class="search-box" style="display: none">
+                    <input id="searchTop" type="text" class="placeholder-sm" placeholder="全局搜索">
+                    <a href="" class="search-btn">
+                        <i class="icon-search"></i>
+                    </a>
+                </div>
+                <a href="" class="text">
+                    <i class="icon-bell-alt"></i>
+                </a>
+                <a href="" class="text">
+                    <i class="icon-tasks"></i>
+                </a>
+                <div class="avatar nav-more-click">
+                    <div class="avatar-img">
+                        <img src="images/1.jpg">
+                    </div>
+                    xx
+                    <i class="icon-angle-down"></i>
+                    <div class="dropdown-menu menu-width-100">
+                        <a href="" class="only-a">修改密码</a>
+                        <a href="" class="only-a">退出</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="xa-menu" onselectstart="return false">
+        <div class="shrink">
+            <i class="icon-bars"></i>
+        </div>
+        <div class="scroll">
+            <ul class="menu">
+                <li class="active">
+                    <div>
+                        <i class="xafont xafont-setup"></i>多标签页管理
+                        <i class="pull-right icon-angle-right rotate90"></i>
+                    </div>
+                    <ul class="two-menu">
+                        <li class="active">
+                            <a href="多标签页.html">多标签页管理</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div id="content" class="pos_rel">
+        <div class="tabs" id="tabs">
+            <nav class="tabs-navbar">
+                <div class="tabs-navbar-left">
+                    <img src="img/arrow.jpg" class="back" alt="">
+                    <img src="img/home.jpg" class="home" alt="">
+                </div>
+                <div class="nav-tabs-contain">
+                    <ul class="tabs-nav nav nav-tabs"></ul>
+                </div>
+                <div class="tabs-navbar-right">
+                    <div class="dropdown dropdown-hover">
+                        <button class="btn" type="button" data-toggle="dropdown">
+                            <i class="icon-angle-down"></i>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="###" class="close-current">关闭当前标签页</a>
+                            </li>
+                            <li>
+                                <a href="###" class="close-other">关闭其他标签页</a>
+                            </li>
+                            <li>
+                                <a href="###" class="close-all">关闭全部标签页</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <img src="img/arrow.jpg" class="forward" alt="">
+                </div>
+                <!-- 中间会生成一段Ul -->
+            </nav>
+        </div>
+    </div>
+    <script src="js/jq.zui.min.js"></script>
+    <script src="lib/tabs/zui.tabs.min.js"></script>
+    <script>
+        glob = {
+            tabs: [{
+                    title: '主页',
+                    url: '标签页1.html',
+                    type: 'iframe',
+                    id: 1,
+                    // 这个属性可以阻止关掉
+                    forbidClose: true
+                },
+                {
+                    title: 'Ajax 例子2',
+                    url: '标签页2.html',
+                    id: 2,
+                    type: 'ajax'
+                },
+                {
+                    title: '自定义例子3',
+                    icon: 'icon-star',
+                    type: 'custom',
+                    id: 3,
+                    content: function () {
+                        return '<div class="alert alert-block alert-success"><p>这里的内容是通过函数动态生成的，每次刷新下面的时间都会更新。</p><p>' +
+                            (new Date().format('yyyy-MM-dd hh:mm:ss')) + '</p></div>';
+                    }
+                },
+                {
+                    title: 'iframe 例子4',
+                    url: '标签页1.html',
+                    type: 'iframe',
+                    id: 4,
+                    // 这个属性可以阻止关掉
+                    // forbidClose: true
+                },
+                {
+                    title: 'Ajax 例子5',
+                    url: '标签页2.html',
+                    id: 5,
+                    type: 'ajax'
+                },
+                {
+                    title: '自定义例子6',
+                    icon: 'icon-star',
+                    type: 'custom',
+                    id: 6,
+                    content: function () {
+                        return '<div class="alert alert-block alert-success"><p>这里的内容是通过函数动态生成的，每次刷新下面的时间都会更新。</p><p>' +
+                            (new Date().format('yyyy-MM-dd hh:mm:ss')) + '</p></div>';
+                    }
+                },
+                {
+                    title: 'iframe 例子7',
+                    url: '标签页1.html',
+                    type: 'iframe',
+                    id: 7,
+                    // 这个属性可以阻止关掉
+                    // forbidClose: true
+                },
+                {
+                    title: 'Ajax 例子8',
+                    url: '标签页2.html',
+                    id: 8,
+                    type: 'ajax'
+                },
+                {
+                    title: '自定义例子9',
+                    icon: 'icon-star',
+                    type: 'custom',
+                    id: 9,
+                    content: function () {
+                        return '<div class="alert alert-block alert-success"><p>这里的内容是通过函数动态生成的，每次刷新下面的时间都会更新。</p><p>' +
+                            (new Date().format('yyyy-MM-dd hh:mm:ss')) + '</p></div>';
+                    }
+                },
+                {
+                    title: 'iframe 例子10',
+                    url: '标签页1.html',
+                    type: 'iframe',
+                    id: 10,
+                    // 这个属性可以阻止关掉
+                    // forbidClose: true
+                },
+                {
+                    title: 'Ajax 例子11',
+                    url: '标签页2.html',
+                    id: 11,
+                    type: 'ajax'
+                },
+                {
+                    title: '自定义例子12',
+                    icon: 'icon-star',
+                    type: 'custom',
+                    id: 12,
+                    content: function () {
+                        return '<div class="alert alert-block alert-success"><p>这里的内容是通过函数动态生成的，每次刷新下面的时间都会更新。</p><p>' +
+                            (new Date().format('yyyy-MM-dd hh:mm:ss')) + '</p></div>';
+                    }
+                },
+                {
+                    title: 'iframe 例子13',
+                    url: '标签页1.html',
+                    type: 'iframe',
+                    id: 13,
+                    // 这个属性可以阻止关掉
+                    // forbidClose: true
+                },
+                {
+                    title: 'Ajax 例子14',
+                    url: '标签页2.html',
+                    id: 14,
+                    type: 'ajax'
+                },
+                {
+                    title: '自定义例子15',
+                    icon: 'icon-star',
+                    type: 'custom',
+                    id: 15,
+                    content: function () {
+                        return '<div class="alert alert-block alert-success"><p>这里的内容是通过函数动态生成的，每次刷新下面的时间都会更新。</p><p>' +
+                            (new Date().format('yyyy-MM-dd hh:mm:ss')) + '</p></div>';
+                    }
+                }
+            ]
+        };
+        (function () {
+
+            // 初始化标签页管理器
+            $('#tabs').tabs({
+                tabs: glob.tabs,
+            });
+        })();
+        // 左右滚动的控制
+        (function () {
+            function ScrollNav(el) {
+                if (!(this instanceof ScrollNav)) {
+                    return new ScrollNav(el)
+                };
+                this.el = el;
+                this.$el = $(el);
+                // 当前顶部导航的长度
+                this.width = this.$el.width(),
+                    // 当前顶部导航中其中一个nav
+                    this.$item = this.$el.find('.tab-nav-item');
+                // 当前顶部导航中其中一个nav的长度
+                this.itemWidth = this.$item.eq(0).width();
+                // 实际滚动的距离
+                this.parentWidth = 0;
+                // 父级盒子的距离
+                this.parentDomWidth = 0;
+                // 最大滚动距离
+                this.maxScrollWidth = 0;
+                // 分几组 用来判断左右移动
+                this.group = 0;
+                // 一次展示几个
+                this.groupNum = 0;
+                // 当前是第几组
+                this.nowGroup = 0;
+                // resize 节流
+                this.timeId = null;
+                // 当前分页的对象  必填的啊 ！！！！！
+                this.tabs = $('#tabs').data('zui.tabs');
+                this._init();
+            }
+            ScrollNav.prototype = {
+                constructor: ScrollNav,
+                _init: function () {
+                    this._winResize();
+                    this._scrollToLeft();
+                    this._scrollToRight();
+                    this.goIndex();
+                    this._clickLast()
+                    this.closeCurrent();
+                    this.closeOthers();
+                    this.closeAll();
+                    this.tabsClose();
+                    this.tabsOpen();
+                },
+                // 拖放重获宽度
+                _winResize: function () {
+                    var _this = this;
+                    $(window).on('resize', function () {
+                        clearTimeout(_this.timeId);
+                        _this.timeId = setTimeout(function () {
+                            // 重获item的个数 避免因为关闭标签的问题
+                            _this.$item = _this.$el.find('.tab-nav-item');
+                            _this.width = _this.$el.width(),
+                                _this.itemWidth = _this.$item.width();
+                            _this._getParentWidth();
+                            _this._getMaxScrollWidth();
+                            _this._getGroup();
+                        }, 200)
+                    })
+                    $(window).trigger('resize')
+                },
+                // 获取获取父级盒子的宽度然后计算每次能滚动多远
+                _getParentWidth: function () {
+                    var parentWidth = this.$el.parent('.nav-tabs-contain').width();
+                    // 父级盒子宽度
+                    this.parentDomWidth = parentWidth;
+                    // 求出一次能展示几组
+                    this.groupNum = Math.floor(parentWidth / this.itemWidth);
+                    // 每次能滚动的距离
+                    this.parentWidth = this.groupNum * this.itemWidth;
+                },
+                // 获取最大滚动距离 就是ul的总长度 
+                _getMaxScrollWidth: function () {
+                    this.maxScrollWidth = this.$item.length * this.itemWidth;
+                },
+                // 获取总共多少组 一组就是一页展示几个
+                _getGroup: function () {
+                    this.group = Math.ceil(this.maxScrollWidth / this.parentWidth) - 1;
+                },
+                // 获取上次的滚动距离
+                _getOldScrollNum: function () {
+                    var transformStr = this.$el.css('transform');
+                    if (transformStr == 'none') {
+                        return 0
+                    }
+                    var arr = this.$el.css('transform').split(','),
+                        oldVal = arr[arr.length - 2];
+                    return oldVal
+                },
+                // 向左滚动
+                _scrollToLeft: function () {
+                    var _this = this;
+                    $('.tabs').on('click', 'img.back', function () {
+                        // nowGoup就是滚动到第几组了
+                        _this.nowGroup--;
+                        if (_this.nowGroup <= 0) {
+                            _this.nowGroup = 0
+                        }
+                        _this.$el.css('transform', 'translateX(-' + _this.parentWidth * _this.nowGroup +
+                            'px)')
+                    })
+                },
+                // 向右滚动
+                _scrollToRight: function () {
+                    var _this = this;
+                    $('.tabs').on('click', 'img.forward', function () {
+                        _this.nowGroup++;
+                        if (_this.nowGroup >= _this.group) {
+                            _this.nowGroup = _this.group
+                        }
+                        _this.$el.css('transform', 'translateX(-' + _this.parentWidth * _this.nowGroup +
+                            'px)')
+                    })
+                },
+                // 当点击每组最后一个
+                _clickLast: function () {
+                    var _this = this;
+                    $('.tabs').on('click', '.tab-nav-item', function (e) {
+                        var $this = $(this),
+                            ofLeft = $this.offset().left - _this.$el.offset().left,
+                            index = $this.index();
+                        // 当他的index 正好被每组几个整除 说明他不是第一个就是最后一个  如果它的偏移距离远多于第一个的偏移距离 他就是最后一个    
+                        if ($(this).index() % _this.groupNum === 0 && Math.abs($this.offset().left) >
+                            Math.abs(_this.parentDomWidth)) {
+                            _this.$el.css('transform', 'translateX(-' + (120 - (_this.parentDomWidth -
+                                ofLeft)) + 'px)')
+                        }
+                    })
+                },
+                // 点击首页移动到首页
+                goIndex: function () {
+                    var _this = this;
+                    $('.tabs').on('click', 'img.home', function (e) {
+                        _this.tabs.open(glob.tabs[0]);
+                        _this.$el.css('transform', 'translateX(-' + 0 + 'px)');
+                        _this.nowGroup = 0;
+
+                    })
+                },
+                // 为啥每次resize  因为要重新获取 不想写了。。。 就直接resize获取
+                // 关闭当前
+                closeCurrent: function () {
+                    var _this = this;
+                    $('.tabs').on('click', '.close-current', function (e) {
+                        var data = _this.tabs.getActiveTab();
+                        if (data && data.id) {
+                            $item = $('.tab-nav-item[data-id="' + data.id + '"]');
+                            // 如果关闭的是最后一个 而且它在当前组的第一位 就是 这个分页只有一项的情况下 让列表往右滚动一次
+                            if ($item.index() + 1 == _this.$item.length && Math.abs($item.offset().left) ==
+                                Math.abs($('.nav-tabs-contain').offset().left)) {
+                                $('img.back').trigger('click');
+                            }
+                            _this.tabs.close({
+                                id: data.id
+                            });
+                        }
+                    })
+                },
+                // 关闭其他  
+                // 关闭其它和关闭全部一样  都是要回到第一页 
+                closeOthers: function () {
+                    var _this = this;
+                    $('.tabs').on('click', '.close-other', function (e) {
+                        var data = _this.tabs.getActiveTab();
+                        if (data && data.id) {
+                            _this.tabs.closeOthers(data.id);
+                            _this.$el.css('transform', 'translateX(-' + 0 + 'px)')
+                            _this.nowGroup = 0;
+                        }
+                    })
+                },
+                // 关闭全部
+                closeAll: function () {
+                    var _this = this;
+                    $('.tabs').on('click', '.close-all', function (e) {
+                        _this.tabs.closeAll();
+                        _this.$el.css('transform', 'translateX(-' + 0 + 'px)')
+                        _this.nowGroup = 0
+                    })
+                },
+                // 监听 关闭标签页 获取tab-nav-item 的剩余数量
+                tabsClose: function(){
+                    $('#tabs').on('onClose', function(tab) {
+                        $(window).trigger('resize')
+                    });
+                },
+                // 监听 打开标签页 获取tab-nav-item 的剩余数量
+                tabsOpen: function(){
+                    $('#tabs').on('onOpen', function(tab) {
+                        $(window).trigger('resize')
+                    });
+                }
+            }
+            ScrollNav('.tabs-nav.nav-tabs');
+        })();
+    </script>
+</body>
+
+</html>
